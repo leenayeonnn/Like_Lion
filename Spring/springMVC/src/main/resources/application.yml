@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: springMVC
+
+server:
+  port: 8888

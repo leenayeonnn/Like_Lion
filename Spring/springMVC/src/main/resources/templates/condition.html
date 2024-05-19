@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CONDITION</title>
+</head>
+<body>
+<h1><@_@></h1>
+<button id="about">goto about</button>
+<button id="home">goto home</button>
+<script>
+    const aboutBtn = document.getElementById("about");
+    const homeBtn = document.getElementById("home");
+
+    aboutBtn.addEventListener("click", (event) => {
+        window.location.href = "http://localhost/about";
+    })
+
+    homeBtn.addEventListener("click", (event) => {
+        window.location.href = "http://localhost/home";
+    })
+</script>
+</body>
+</html>

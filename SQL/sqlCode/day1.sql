@@ -1,0 +1,82 @@
+SHOW TABLES;
+
+SELECT VERSION();
+
+SELECT CURRENT_DATE;
+SELECT CURRENT_USER;
+
+SELECT SIN(PI() / 4);
+
+SELECT USER(),
+       CURRENT_USER,
+       CURRENT_DATE;
+
+USE exampleDB;
+SHOW TABLES;
+
+USE hr;
+SHOW TABLES;
+
+DESC employees;
+
+SELECT department_id 부서번호
+FROM employees;
+
+use exampleDB;
+
+SELECT empno
+     , ename
+     , sal
+FROM emp;
+
+SELECT empno
+     , ename
+     , sal
+FROM emp;
+
+SELECT dname
+     , loc
+FROM dept;
+
+use exampleDB;
+
+CREATE TABLE SALGRADE
+(
+    GRADE TINYINT,
+    LOSAL SMALLINT,
+    HISAL SMALLINT
+);
+
+INSERT INTO SALGRADE
+VALUES (1, 700, 1200);
+INSERT INTO SALGRADE
+VALUES (2, 1201, 1400);
+INSERT INTO SALGRADE
+VALUES (3, 1401, 2000);
+INSERT INTO SALGRADE
+VALUES (4, 2001, 3000);
+INSERT INTO SALGRADE
+VALUES (5, 3001, 9999);
+
+desc dept;
+
+SELECT SALGRADE.GRADE
+     , SALGRADE.LOSAL
+     , SALGRADE.HISAL
+FROM SALGRADE;
+
+SELECT *
+FROM SALGRADE;
+
+SELECT SALGRADE.LOSAL
+     , SALGRADE.GRADE
+     , SALGRADE.HISAL
+FROM SALGRADE;
+
+SELECT DISTINCT emp.mgr
+              , emp.empno
+FROM EMP;
+
+SELECT emp.empno 사번
+     , ename     사원이름
+FROM EMP;
