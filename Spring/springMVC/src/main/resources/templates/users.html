@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>USERS</title>
+</head>
+<body>
+<h1>User List</h1>
+<table>
+    <tr>
+        <th th:text="#{name.message}"></th>
+        <th th:text="#{authority.message}"></th>
+    </tr>
+    <div th:each="user : ${users}">
+        <tr th:if="${user.admin}">
+            <td th:text="${user.name}"></td>
+            <td th:text="#{admin.message}"></td>
+        </tr>
+        <tr th:unless="${user.admin}">
+            <td th:text="${user.name}"></td>
+            <td th:text="#{generalUser.message}"></td>
+        </tr>
+    </div>
+</table>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>WELCOME</title>
+</head>
+<body>
+<h1 th:text="${welcomeMsg}"></h1>
+<ul>
+    <li th:each="item : ${items}" th:text="${item.name}"></li>
+</ul>
+<!--th:include="파일명 :: fragment 명"-->
+<div th:include="common/footer :: footer"></div>
+</body>
+</html>

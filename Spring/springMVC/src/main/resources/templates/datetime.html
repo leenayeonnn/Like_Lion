@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DATE_TIME</title>
+</head>
+<body>
+<h1>Date and Time Examples</h1>
+<p>
+    Current Date:
+    <span th:text="${#temporals.format(date, 'yyyy-MM-dd')}"></span>
+</p>
+<p>
+    Current DateTime:
+    <span
+            th:text="${#temporals.format(dateTime, 'yyyy-MM-dd HH:mm:ss')}"
+    ></span>
+</p>
+<p>
+    Current Time:
+    <span th:text="${#temporals.format(time, 'HH:mm:ss')}"></span>
+</p>
+<p>
+    Current Zoned DateTime:
+    <span
+            th:text="${#temporals.format(zonedDateTime, 'yyyy-MM-dd HH:mm:ss zzzz')}"
+    ></span>
+</p>
+</body>
+</html>

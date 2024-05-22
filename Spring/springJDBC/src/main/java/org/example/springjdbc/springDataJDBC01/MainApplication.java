@@ -22,18 +22,18 @@ public class MainApplication {
 //    @Bean
 //    public CommandLineRunner demo(UserRepository userRepository) {
 //        return args -> {
-////            userRepository.save(new User("jun", "jun@gmail.com"));
-////            userRepository.save(new User("park", "park@gmail.com"));
-////            userRepository.save(new User("lee", "lee@gmail.com"));
-////            userRepository.save(new User("kim", "kim@gmail.com"));
+//            userRepository.save(new User("jun", "jun@gmail.com"));
+//            userRepository.save(new User("park", "park@gmail.com"));
+//            userRepository.save(new User("lee", "lee@gmail.com"));
+//            userRepository.save(new User("kim", "kim@gmail.com"));
 //
-////            User user = userRepository.findById(8L).get();
-////            System.out.println(user.getName());
-////
+//            User user = userRepository.findById(8L).get();
+//            System.out.println(user.getName());
+//
 //            PageRequest pageRequest = PageRequest.of(0, 2);
 //            Page<User> allUser = userRepository.findAllUsersWithPagination(pageRequest);
 //
-//            allUser.forEach(user -> System.out.println(user.getName() + " - " + user.getEmail()));
+//            allUser.forEach(u -> System.out.println(u.getName() + " - " + u.getEmail()));
 //        };
 //    }
 
