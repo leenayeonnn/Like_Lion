@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Friend</title>
+    <link rel="stylesheet" th:href="@{/css/friend.css}">
+</head>
+<body>
+<h1>Edit Friend</h1>
+<form th:action="@{/friends/edit}" method="post" th:object="${friend}">
+    <input type="hidden" th:field="*{id}">
+    <label for="name">Name : </label>
+    <input type="text" id="name" th:default="${friend.name}" th:field="*{name}" required>
+
+    <label for="email">Email : </label>
+    <input type="text" id="email" th:default="${friend.email}" th:field="*{email}" required>
+
+    <input type="submit" value="Edit">
+</form>
+
+</body>
+</html>

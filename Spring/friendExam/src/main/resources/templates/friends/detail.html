@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Detail</title>
+    <link rel="stylesheet" th:href="@{/css/friend.css}">
+</head>
+<body>
+<h2 th:text="${friend.name}">Friend Name</h2>
+<div>
+    <strong>Email : </strong> <span th:text="${friend.email}">Email</span>
+</div>
+
+<a th:href="@{/friends}">List</a>
+<a th:href="@{/friends/edit/{id}(id=${friend.id})}">Edit</a>
+<a th:href="@{/friends/delete/{id}(id=${friend.id})}">Delete</a>
+</body>
+</html>

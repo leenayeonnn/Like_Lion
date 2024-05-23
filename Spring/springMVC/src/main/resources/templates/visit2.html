@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>VISIT2</title>
+</head>
+<body>
+<h1>Count visit num using Session</h1>
+<!--내장되어 있는 session객체에서 값을 꺼내옴-->
+<!--이론적으로 작은 scope부터 속성을 찾아다니는데
+    이 코드의 visitCount가 안나와서 값을 명시해줌-->
+<p>this is <span th:text="${session.visitCount2}"></span>th visit</p>
+<a th:href="@{/resetVisit}">reset visit count</a>
+</body>
+</html>

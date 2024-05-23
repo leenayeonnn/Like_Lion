@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Regi Friend</h1>
+<form method="post" th:action="@{/friendRegiSubmit}" th:object="${friend}">
+    <label for="name">name : </label>
+    <input type="text" name="name" id="name">
+    <br>
+    <label for="email">email : </label>
+    <input type="text" name="email" id="email">
+    <br>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
