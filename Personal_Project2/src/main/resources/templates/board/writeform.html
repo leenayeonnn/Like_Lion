@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Write Board</title>
+    <link rel="stylesheet" th:href="@{/css/board.css}">
+</head>
+<body>
+<h1>Create New Board</h1>
+<form th:action="@{/board/writeform}" method="post" th:object="${board}">
+    <label for="name">Name</label>
+    <br/>
+
+    <input type="text" id="name" th:field="*{name}" required>
+    <br/>
+
+    <label for="title">Title</label>
+    <br/>
+
+    <input type="text" id="title" th:field="*{title}" required>
+    <br/>
+
+    <label for="content">Content</label>
+    <br/>
+
+    <textarea type="text" id="content" th:field="*{content}" required></textarea>
+    <br/>
+
+    <label for="password">Password</label>
+    <br/>
+
+    <input type="text" id="password" th:field="*{password}" required>
+    <br/>
+
+    <input type="submit" value="Rigistration">
+</form>
+</body>
+</html>

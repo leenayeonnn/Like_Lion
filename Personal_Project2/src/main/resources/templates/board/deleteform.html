@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+    <link rel="stylesheet" th:href="@{/css/board.css}">
+</head>
+<body>
+<h1>Delete Board</h1>
+<form th:action="@{/board/deleteform(id=${id})}" method="post">
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password" th:value="${password}" required />
+    <button type="submit">Delete</button>
+</form>
+<!-- 비밀번호 오류 메시지 표시 -->
+<div th:if="${error != null}">
+    <p th:text="${error}"></p>
+</div>
+</body>
+</html>

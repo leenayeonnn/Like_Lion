@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: Personal_Project2
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/exampleDB
+    username: skdus
+    password: skdus1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: 80
