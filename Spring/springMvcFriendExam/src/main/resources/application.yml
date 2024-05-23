@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: springMvcFriendExam
+
+  messages:
+    basename: messages
+    encoding: UTF-8
+    cache-duration: 0
+
+server:
+  port: 80
+
+  error:
+    whitelabel:
+      enabled: false
