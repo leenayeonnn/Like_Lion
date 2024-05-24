@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class BoardService {
     private final BoardRepository repository;
 
+    // 모든 게시글 가져오기
     @Transactional(readOnly = true)
     public Page<Board> findAllBoard(Pageable pageable) {
         Pageable sortedByDescDate = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize(),
@@ -25,10 +26,12 @@ public class BoardService {
         return repository.findAll(sortedByDescDate);
     }
 
+    // id 통해 게시글 가져오기
     public Board findById(Long id) {
         return repository.findById(id).orElse(null);
     }
 
+    // 게시글 저장
     @Transactional
     public void saveBoard(Board board) {
         LocalDateTime date = LocalDateTime.now();
@@ -37,6 +40,7 @@ public class BoardService {
         repository.save(board);
     }
 
+    // 게시글 삭제
     @Transactional
     public boolean deleteBoard(Long id, String password) {
         Board board = findById(id);
@@ -47,6 +51,7 @@ public class BoardService {
         return false;
     }
 
+    // 게시글 수정
     @Transactional
     public boolean updateBoard(Board newBoard) {
         Board oldBoard = findById(newBoard.getId());

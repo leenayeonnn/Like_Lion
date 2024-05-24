@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BoardController {
     private final BoardService service;
 
+    // 게시판 리스트
+    // 5개씩 출력
     @GetMapping
     public String boards(Model model,
                          @RequestParam(defaultValue = "1") int page,
@@ -33,30 +35,35 @@ public class BoardController {
         return "board/list";
     }
 
+    // 상세 보기
     @GetMapping("/view")
     public String readDetail(@RequestParam Long id, Model model) {
         model.addAttribute("board", service.findById(id));
         return "board/detail";
     }
 
+    // 등록 폼
     @GetMapping("/writeform")
     public String writeForm(Model model) {
         model.addAttribute("board", new Board());
         return "board/writeform";
     }
 
+    // 등록하기
     @PostMapping("/writeform")
     public String writeBoard(@ModelAttribute("board") Board board) {
         service.saveBoard(board);
         return "redirect:/board";
     }
 
+    // 삭제 폼
     @GetMapping("/deleteform")
     public String deleteForm(@RequestParam Long id, Model model) {
         model.addAttribute("id", id);
         return "board/deleteform";
     }
 
+    // 삭제하기
     @PostMapping("/deleteform")
     public String deleteBoard(@RequestParam Long id,
                               @RequestParam String password,
@@ -72,6 +79,7 @@ public class BoardController {
         return "board/deleteform";
     }
 
+    // 수정 폼
     @GetMapping("/updateform")
     public String updateForm(@RequestParam Long id, Model model) {
         model.addAttribute("id", id);
@@ -79,6 +87,7 @@ public class BoardController {
         return "board/updateform";
     }
 
+    // 수정하기
     @PostMapping("/updateform")
     public String updateBoard(@ModelAttribute("board") Board board,
                               Model model) {
