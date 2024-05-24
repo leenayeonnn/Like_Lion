@@ -11,18 +11,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/board")
 @RequiredArgsConstructor
 public class BoardController {
     private final BoardService service;
 
     // 게시판 리스트
     // 5개씩 출력
-    @GetMapping
+    @GetMapping("/list")
     public String boards(Model model,
                          @RequestParam(defaultValue = "1") int page,
                          @RequestParam(defaultValue = "5") int size) {
@@ -50,10 +48,10 @@ public class BoardController {
     }
 
     // 등록하기
-    @PostMapping("/writeform")
+    @PostMapping("/write")
     public String writeBoard(@ModelAttribute("board") Board board) {
         service.saveBoard(board);
-        return "redirect:/board";
+        return "redirect:/list";
     }
 
     // 삭제 폼
@@ -70,7 +68,7 @@ public class BoardController {
                               Model model) {
 
         if (service.deleteBoard(id, password)) {
-            return "redirect:/board";
+            return "redirect:/list";
         }
 
         model.addAttribute("id", id);
@@ -93,7 +91,7 @@ public class BoardController {
                               Model model) {
 
         if (service.updateBoard(board)) {
-            return "redirect:/board";
+            return "redirect:/list";
         }
 
         model.addAttribute("id", board.getId());

@@ -9,7 +9,7 @@
 <body>
 <div id="container">
     <h1>Create New Board</h1>
-    <form th:action="@{/board/writeform}" method="post" th:object="${board}">
+    <form th:action="@{/write}" method="post" th:object="${board}">
         <label for="name">Name</label>
         <br/>
         <input type="text" id="name" th:field="*{name}" required>
