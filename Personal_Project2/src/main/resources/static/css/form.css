@@ -1,0 +1,21 @@
+#container {
+    height: 500px;
+    width: 300px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightgray;
+}
+
+label,
+input,
+textarea,
+button {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 290px;
+}
+
+textarea {
+    height: 200px;
+}

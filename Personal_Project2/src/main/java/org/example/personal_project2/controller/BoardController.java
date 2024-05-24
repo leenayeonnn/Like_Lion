@@ -23,7 +23,7 @@ public class BoardController {
     @GetMapping
     public String boards(Model model,
                          @RequestParam(defaultValue = "1") int page,
-                         @RequestParam(defaultValue = "10") int size) {
+                         @RequestParam(defaultValue = "5") int size) {
         Pageable pageable = PageRequest.of(page - 1, size);
 
         Page<Board> boards = service.findAllBoard(pageable);
@@ -82,7 +82,7 @@ public class BoardController {
     @PostMapping("/updateform")
     public String updateBoard(@ModelAttribute("board") Board board,
                               Model model) {
-        System.out.println(board.getId());
+
         if (service.updateBoard(board)) {
             return "redirect:/board";
         }

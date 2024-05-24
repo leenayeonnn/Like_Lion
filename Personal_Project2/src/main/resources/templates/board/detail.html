@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <title>Board Detail</title>
     <link rel="stylesheet" th:href="@{/css/board.css}">
+    <link rel="stylesheet" th:href="@{/css/detail.css}">
 </head>
 <body>
-<h2 th:text="${board.title}">Title</h2>
+<div id="container">
+    <h2 th:text="${board.title}">Title</h2>
 
-<div>
-    <strong>Name : </strong> <span th:text="${board.name}">Name</span>
-</div>
-<div>
-    <strong>Content : </strong> <span th:text="${board.content}">Content</span>
-</div>
-<div>
-    <strong>Created At : </strong> <span th:text="${#temporals.format(board.createdAt, 'YYYY/MM/dd HH:mm')}">Date</span>
-</div>
+    <div id="content">
+        <div>
+            <strong>Name : </strong> <span th:text="${board.name}">Name</span>
+        </div>
+        <div>
+            <strong>Content : </strong> <span th:text="${board.content}">Content</span>
+        </div>
+        <div>
+            <strong>Created At : </strong> <span
+                th:text="${#temporals.format(board.createdAt, 'YYYY/MM/dd HH:mm')}">Date</span>
+        </div>
+    </div>
 
-<a th:href="@{/board}">List</a>
-<a th:href="@{/board/updateform(id=${board.id})}">Edit</a>
-<a th:href="@{/board/deleteform(id=${board.id})}">Delete</a>
+    <ul>
+        <li><a th:href="@{/board}">List</a></li>
+        <li><a th:href="@{/board/updateform(id=${board.id})}">Edit</a></li>
+        <li><a th:href="@{/board/deleteform(id=${board.id})}">Delete</a></li>
+    </ul>
+</div>
 </body>
 </html>

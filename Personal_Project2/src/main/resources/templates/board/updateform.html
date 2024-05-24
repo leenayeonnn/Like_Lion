@@ -4,41 +4,51 @@
     <meta charset="UTF-8">
     <title>Update</title>
     <link rel="stylesheet" th:href="@{/css/board.css}">
+    <link rel="stylesheet" th:href="@{/css/form.css}">
 </head>
 <body>
-<h1>Board Update</h1>
-<form th:action="@{/board/updateform(id=${id})}" method="post" th:object="${board}">
-    <input type="hidden" th:field="*{id}">
-    <input type="hidden" th:field="*{createdAt}">
+<div id="container">
+    <h1>Board Update</h1>
+    <form th:action="@{/board/updateform(id=${id})}" method="post" th:object="${board}">
+        <input type="hidden" th:field="*{id}">
+        <input type="hidden" th:field="*{createdAt}">
 
-    <label for="name">Name</label>
-    <br/>
+        <label for="name">Name</label>
+        <br/>
 
-    <input type="text" id="name" th:field="*{name}" required>
-    <br/>
+        <input type="text" id="name" th:field="*{name}" required>
+        <br/>
 
-    <label for="title">Title</label>
-    <br/>
+        <label for="title">Title</label>
+        <br/>
 
-    <input type="text" id="title" th:field="*{title}" required>
-    <br/>
+        <input type="text" id="title" th:field="*{title}" required>
+        <br/>
 
-    <label for="content">Content</label>
-    <br/>
+        <label for="content">Content</label>
+        <br/>
 
-    <textarea id="content" th:field="*{content}" required></textarea>
-    <br/>
+        <textarea id="content" th:field="*{content}" required></textarea>
+        <br/>
 
-    <label for="password">Password</label>
-    <br/>
+        <label for="password">Password</label>
+        <br/>
 
-    <input type="text" id="password" name="password" required>
-    <br/>
+        <input type="password" id="password" name="password" required>
+        <br/>
 
-    <input type="submit" value="Rigistration">
-</form>
-<div th:if="${error != null}">
-    <p th:text="${error}"></p>
+        <input type="submit" value="Rigistration">
+    </form>
 </div>
+<div th:if="${error != null}">
+    <p th:text="${error}" style="display:none;" id="error-message"></p>
+</div>
+
+<script th:inline="javascript">
+    const errorMessage = [[${error}]];
+    if (errorMessage) {
+        alert(errorMessage);
+    }
+</script>
 </body>
 </html>

@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <title>Delete</title>
     <link rel="stylesheet" th:href="@{/css/board.css}">
+    <link rel="stylesheet" th:href="@{/css/form.css}">
+    <link rel="stylesheet" th:href="@{/css/deleteform.css}">
 </head>
 <body>
-<h1>Delete Board</h1>
-<form th:action="@{/board/deleteform(id=${id})}" method="post">
-    <label for="password">Password:</label>
-    <input type="text" id="password" name="password" th:value="${password}" required />
-    <button type="submit">Delete</button>
-</form>
-<!-- 비밀번호 오류 메시지 표시 -->
-<div th:if="${error != null}">
-    <p th:text="${error}"></p>
+<div id="container">
+    <h1>Delete Board</h1>
+    <form th:action="@{/board/deleteform(id=${id})}" method="post">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" th:value="${password}" required/>
+        <button type="submit">Delete</button>
+    </form>
 </div>
+<div th:if="${error != null}">
+    <p th:text="${error}" style="display:none;" id="error-message"></p>
+</div>
+
+<script th:inline="javascript">
+    const errorMessage = [[${error}]];
+    if (errorMessage) {
+        alert(errorMessage);
+    }
+</script>
 </body>
 </html>
