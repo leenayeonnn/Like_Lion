@@ -27,6 +27,7 @@ public class BoardService {
     }
 
     // id 통해 게시글 가져오기
+    @Transactional(readOnly = true)
     public Board findById(Long id) {
         return repository.findById(id).orElse(null);
     }

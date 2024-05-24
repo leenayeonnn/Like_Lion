@@ -40,9 +40,6 @@
         <input type="submit" value="Edit">
     </form>
 </div>
-<div th:if="${error != null}">
-    <p th:text="${error}" style="display:none;" id="error-message"></p>
-</div>
 
 <script th:inline="javascript">
     const errorMessage = [[${error}]];
