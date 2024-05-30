@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <!--unit은 이름 다르게 해서 여러개 작성 가능-->
+    <persistence-unit name="UserPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+<!--        <class>com.example.jpa.exampleDB.user.User</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.school.School</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.school.Student</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.book.Book</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.book.Author</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.employee.Employee</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.employee.Project</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.passport.Passport</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.passport.Person</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.vehicle.Vehicle</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.vehicle.Car</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.vehicle.Truck</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.vehicle.Vehicle2</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.vehicle.Car2</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.vehicle.Truck2</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.vehicle.Vehicle3</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.vehicle.Car3</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.vehicle.Truck3</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+<!--        <class>com.example.jpa.exampleDB.company.Company</class>  &lt;!&ndash; Add this line &ndash;&gt;-->
+        <class>com.example.jpa.hr.Country</class>  <!-- Add this line -->
+        <class>com.example.jpa.hr.Region</class>  <!-- Add this line -->
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hr"/>
+            <property name="jakarta.persistence.jdbc.user" value="skdus"/>
+            <property name="jakarta.persistence.jdbc.password" value="skdus1234"/>
+
+            <!-- dialect? -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <!-- value : create, create-drop, update, validate, none(default) -->
+            <!--실제로 자동으로 테이블 생성 및 업데이트는 중요한 것이기에 사용 지양
+                연습할땐 좋음 -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

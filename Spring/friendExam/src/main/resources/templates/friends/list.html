@@ -8,7 +8,7 @@
 <body>
 <h1>Friend List</h1>
 <a th:href="@{/friends/add}">Registration</a>
-<table th:if="!${friends.empty}">
+<table th:if="${friends.isEmpty != null}">
     <thead>
     <tr>
         <th>ID</th>

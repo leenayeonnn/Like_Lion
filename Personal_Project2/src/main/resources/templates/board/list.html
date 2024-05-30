@@ -35,5 +35,11 @@
         </li>
     </ul>
 </div>
+<script th:inline="javascript">
+    const message = [[${message}]];
+    if (message) {
+        alert(message);
+    }
+</script>
 </body>
 </html>
