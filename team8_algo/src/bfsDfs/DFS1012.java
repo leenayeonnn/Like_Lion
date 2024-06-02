@@ -42,6 +42,7 @@ public class DFS1012 {
     private static int findSolutionWithDfs(boolean[][] board) {
         int solution = 0;
 
+        // 모든 칸을 확인해서 배추 있는 곳에서 dfs 호출
         for (int y = 0; y < board.length; y++) {
             for (int x = 0; x < board[0].length; x++) {
                 if (board[y][x]) {
@@ -55,17 +56,24 @@ public class DFS1012 {
     }
 
     private static void dfs(boolean[][] board, int x, int y) {
+        // 탐색 순서 : 우 -> 좌 -> 하 -> 상
         int[] moveX = {1, -1, 0, 0};
         int[] moveY = {0, 0, 1, -1};
 
+        // 방문 배열을 만들지 않고
+        // false로 값을 바꿔 방문 처리
         board[y][x] = false;
 
         for (int i = 0; i < 4; i++) {
+            // 확인할 표인트 지정
             int newX = x + moveX[i];
             int newY = y + moveY[i];
 
+            // 유효한 board 범위의 포인트 일시
             if (newX >= 0 && newX < board[0].length && newY >= 0 && newY < board.length) {
+                // 해당 포인트에 배추가 있는가
                 if (board[newY][newX]) {
+                    // 있으면 dfs 호출
                     dfs(board, newX, newY);
                 }
             }
