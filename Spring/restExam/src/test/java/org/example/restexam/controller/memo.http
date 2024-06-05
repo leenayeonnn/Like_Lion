@@ -1,0 +1,23 @@
+### POST
+POST http://localhost/api/memos
+Content-Type: application/json
+
+{
+  "content": "memo!!"
+}
+
+### GET /{id}
+GET http://localhost/api/memos/1
+Accept: application/json
+
+### PUT /{id}
+PUT http://localhost/api/memos/1
+Content-Type: application/json
+
+{
+  "content": "new memo!!!"
+}
+
+### DELETE /{id}
+DELETE http://localhost/api/memos/1
+Accept: application/json

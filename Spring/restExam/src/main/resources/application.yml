@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: restExam
+
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 10KB
+      enabled: true
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/exampleDB
+    username: skdus
+    password: skdus1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+
+server:
+  port: 80

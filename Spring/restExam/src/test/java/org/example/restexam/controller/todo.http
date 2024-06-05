@@ -1,0 +1,36 @@
+### GET /todos
+GET http://localhost/api/todos
+Accept: application/json
+
+### GET /todos/{id}
+GET http://localhost/api/todos/152
+Accept: application/json
+
+### POST /todos
+POST http://localhost/api/todos
+Content-Type: application/json
+
+{
+  "todo": "new Todo !!"
+}
+
+### PATCH /todos/{id}
+PATCH http://localhost/api/todos/202
+Accept: application/json
+
+### PATCH /todos
+PATCH http://localhost/api/todos
+Content-Type: application/json
+
+{
+  "id": 202,
+  "todo": "new new Todo!!!!!!!!!!"
+}
+
+### DELETE /todos/{id}
+DELETE http://localhost/api/todos/202
+Content-Type: application/json
+
+{
+  "id": 202
+}
