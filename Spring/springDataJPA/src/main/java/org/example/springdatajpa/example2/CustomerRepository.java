@@ -12,7 +12,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     @Query("SELECT c, COUNT(o) FROM Customer c LEFT JOIN c.orders o GROUP BY c")
     List<Object[]> findCustomerOrderCount();
 
-    @Query("SELECT c, o FROM Customer c LEFT JOIN c.orders o WHERE o.date = (SELECT MAX(o2.date) FROM Order o2 WHERE o2.customer = c)")
+    @Query("SELECT c, o FROM Customer c LEFT JOIN FETCH c.orders o WHERE o.date = (SELECT MAX(o2.date) FROM Order o2 WHERE o2.customer = c)")
     List<Object[]> findCustomerLatestOrder();
 
     @Query("SELECT c FROM Customer c WHERE c.age > (SELECT AVG(c2.age) FROM Customer c2)")

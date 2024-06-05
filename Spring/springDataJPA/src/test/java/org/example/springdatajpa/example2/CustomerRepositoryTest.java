@@ -4,7 +4,6 @@ import static org.assertj.core.api.Assertions.*;
 //import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -102,5 +101,9 @@ class CustomerRepositoryTest {
         assertThat(customers)
                 .extracting(Customer::getName)
                 .containsExactlyInAnyOrder("박민수", "최지현", "윤서준", "임도연");
+
+        customers.forEach(customer -> {
+            customer.getOrders().forEach(order -> log.info(order.getProduct()));
+        });
     }
 }

@@ -65,7 +65,7 @@ public class DFS1012 {
         board[y][x] = false;
 
         for (int i = 0; i < 4; i++) {
-            // 확인할 표인트 지정
+            // 확인할 포인트 지정
             int newX = x + moveX[i];
             int newY = y + moveY[i];
 
