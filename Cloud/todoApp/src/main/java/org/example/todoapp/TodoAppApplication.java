@@ -13,16 +13,16 @@ public class TodoAppApplication {
         SpringApplication.run(TodoAppApplication.class, args);
     }
 
-    @Value("${DB_USERNAME}")
-    private String dbUsername;
-    @Value("${DB_PASSWORD}")
-    private String dbPassword;
-    @Bean
-    public CommandLineRunner run(){
-        return args -> {
-            System.out.println("DB_USERNAME"+dbUsername);
-            System.out.println("DB_PASSWORD"+dbPassword);
-        };
-    }
+//    @Value("${DB_USERNAME}")
+//    private String dbUsername;
+//    @Value("${DB_PASSWORD}")
+//    private String dbPassword;
+//    @Bean
+//    public CommandLineRunner run(){
+//        return args -> {
+//            System.out.println("DB_USERNAME"+dbUsername);
+//            System.out.println("DB_PASSWORD"+dbPassword);
+//        };
+//    }
 
 }
